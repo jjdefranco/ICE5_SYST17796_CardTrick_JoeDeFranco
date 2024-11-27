@@ -28,7 +28,7 @@ public class CardTrick {
             c.setSuit(Card.SUITS[random.nextInt(4)]); // Random suit (0 to 3 mapped to SUITS array)
             magicHand[i] = c;
         }
-
+        
         // Display the randomly generated cards (for debugging or fun)
         System.out.println("The Magic Hand contains:");
         for (Card card : magicHand) {

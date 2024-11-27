@@ -11,8 +11,9 @@ package com.mycompany.cardtrick;
  * There are 52 cards in a deck, no jokers.
  * This code is to be used in ICE1. When you create your own branch,
  * add your name as a modifier.
- * @author joede
- */
+ * @author Author: Carlos Rebelo
+ * Student Number: 991729616
+ * */
 public class Card {
     public static final String[] SUITS = {"Hearts", "Diamonds", "Clubs", "Spades"};
     private String suit; //clubs, spades, diamonds, hearts
