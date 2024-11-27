@@ -13,61 +13,54 @@ package com.mycompany.cardtrick;
  * to pick a card, checking if it exists in the hand.
  */
 import java.util.Random;
+import java.util.Scanner;
 
 public class CardTrick {
-
     public static void main(String[] args) {
-        Random random = new Random();
-        Card[] magicHand = new Card[7];
-        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+        final int HAND_SIZE = 7;
+        Card[] magicHand = new Card[HAND_SIZE];
+        Random rand = new Random();
 
-        // Fill the magic hand with random cards
-        for (int i = 0; i < magicHand.length; i++) {
-            int value = random.nextInt(13) + 1; // Values 1 to 13
-            String suit = suits[random.nextInt(4)];
-            magicHand[i] = new Card(value, suit);
+        // Fill the magicHand with random cards
+        for (int i = 0; i < HAND_SIZE; i++) {
+            Card card = new Card();
+            card.setSuit(Card.SUITS[rand.nextInt(Card.SUITS.length)]);
+            card.setValue(rand.nextInt(13) + 1); // Values 1 to 13
+            magicHand[i] = card;
         }
 
-        // Prompt the user to pick a card
-        java.util.Scanner scanner = new java.util.Scanner(System.in);
-        System.out.print("Pick a card value (1-13): ");
-        int userValue = scanner.nextInt();
-        System.out.print("Pick a suit (Hearts, Diamonds, Clubs, Spades): ");
-        String userSuit = scanner.next();
+        // Display the magic hand for debugging
+        for (Card card : magicHand) {
+            System.out.println(card.getValue() + " of " + card.getSuit());
+        }
 
-        // Search the magic hand
-        boolean cardFound = false;
+        // Ask user to pick a card
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\nPick a card!");
+        System.out.print("Enter the value of the card (1-13): ");
+        int userValue = scanner.nextInt();
+
+        scanner.nextLine(); // Consume newline
+        System.out.print("Enter the suit of the card (Hearts, Diamonds, Spades, Clubs): ");
+        String userSuit = scanner.nextLine();
+
+        // Check if the card is in the magic hand
+        boolean found = false;
         for (Card card : magicHand) {
             if (card.getValue() == userValue && card.getSuit().equalsIgnoreCase(userSuit)) {
-                cardFound = true;
+                found = true;
                 break;
             }
         }
 
-        // Display the result
-        if (cardFound) {
+        // Report the result
+        if (found) {
             System.out.println("Your card is in the magic hand!");
         } else {
             System.out.println("Your card is not in the magic hand.");
         }
+
+        scanner.close();
     }
 }
-
-class Card {
-    private int value;
-    private String suit;
-
-    public Card(int value, String suit) {
-        this.value = value;
-        this.suit = suit;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public String getSuit() {
-        return suit;
-    }
-}
-
