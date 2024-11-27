@@ -56,7 +56,7 @@ public class CardTrick {
     }
         
         // Prompts a user to enter a random value for the card
-        public int getUserCard() {
+        public static int getUserCard() {
             // Create a scanner object
             Scanner s = new Scanner(System.in);
             // Prompt the user to enter a random variable between 1 to 52, 
@@ -72,7 +72,7 @@ public class CardTrick {
         }      
         
         // Set the card value that the user entered
-        public Card setUserCard(int i) {
+        public static Card setUserCard(int i) {
             Card userCard = new Card();
             
             userCard.setValue(i % 13 + 1);
