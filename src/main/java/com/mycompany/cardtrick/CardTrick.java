@@ -38,12 +38,13 @@ public class CardTrick {
         // tell the user what card it is
         int userC = getUserCard();
         Card userCard = setUserCard(userC);
+        System.out.println("Your card is: " + userCard.getValue() + " of " + userCard.getSuit());
         
         // Check if the card the user chose 
         // is inside the magicHand
         boolean cardExists = false;
-        for (int i=0; i<magicHand.length; i++){
-            if (userCard.equals(magicHand[i])) {
+        for (Card magicHand1 : magicHand) {
+            if (userCard.equals(magicHand1)) {
                 cardExists = true;
             }
         }
@@ -75,7 +76,11 @@ public class CardTrick {
         public static Card setUserCard(int i) {
             Card userCard = new Card();
             
-            userCard.setValue(i % 13 + 1);
+            int cardVal = i % 13;
+            if (cardVal == 0) {
+                cardVal = 13;
+            }
+            userCard.setValue(cardVal);
             userCard.setSuit(Card.SUITS[(int)(i / 13) - 1]);
             return userCard;
         }
