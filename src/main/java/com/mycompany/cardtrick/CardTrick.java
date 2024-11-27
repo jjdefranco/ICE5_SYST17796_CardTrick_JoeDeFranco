@@ -7,6 +7,7 @@ package com.mycompany.cardtrick;
 /**
  *
  * @author joede
+ * @author claire yao 991596735 modified date: 2024-11-26
  */
 public class CardTrick {
 
