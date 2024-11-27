@@ -14,36 +14,26 @@ package com.mycompany.cardtrick;
  * @author joede
  */
 public class Card {
+    public static final String[] SUITS = {"Hearts", "Diamonds", "Clubs", "Spades"};
     private String suit; //clubs, spades, diamonds, hearts
-   private int value;    //1-13
+    private int value;    //1-13
 
-   public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
-    /**
-     * @return the suit
-     */
-    public String getSuit() {
-        return suit;
-    }
-
-    /**
-     * @param suit the suit to set
-     */
-    public void setSuit(String suit) {
-        this.suit = suit;
-    }
-
-    /**
-     * @return the value
-     */
+    // Getter and Setter for value
     public int getValue() {
         return value;
     }
 
-    /**
-     * @param value the value to set
-     */
     public void setValue(int value) {
         this.value = value;
+    }
+
+    // Getter and Setter for suit
+    public String getSuit() {
+        return suit;
+    }
+
+    public void setSuit(String suit) {
+        this.suit = suit;
     }
    
 }
