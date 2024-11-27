@@ -11,13 +11,22 @@ package com.mycompany.cardtrick;
  * There are 52 cards in a deck, no jokers.
  * This code is to be used in ICE1. When you create your own branch,
  * add your name as a modifier.
- * @author joede
+ * @author jean haroun
  */
 public class Card {
     private String suit; //clubs, spades, diamonds, hearts
    private int value;    //1-13
+   
+   
 
    public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
+   public static final int[] VALUES = {1,2, 3, 4, 5, 6, 7, 8,9, 10, 11, 12, 13};
+   
+   public Card(int value, String suit) {
+        this.value = value;
+        this.suit = suit;
+    }
+
     /**
      * @return the suit
      */
@@ -44,6 +53,20 @@ public class Card {
      */
     public void setValue(int value) {
         this.value = value;
+    }
+    
+     public String valueToString() {
+        switch (value) {
+            case 11: return "Jack";
+            case 12: return "Queen";
+            case 13: return "King";
+            case 14: return "Ace";
+            default: return String.valueOf(value);
+        }
+    }
+     @Override
+    public String toString() {
+        return valueToString() + " of " + suit;
     }
    
 }
