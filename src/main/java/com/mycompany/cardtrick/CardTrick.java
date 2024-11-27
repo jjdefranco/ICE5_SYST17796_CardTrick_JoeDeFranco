@@ -4,6 +4,7 @@
 
 package com.mycompany.cardtrick;
 
+
 /**
  *
  * @author joede
@@ -13,13 +14,13 @@ public class CardTrick {
     public static void main(String[] args) {
         Card[] magicHand = new Card[7];
         
-        // TODO:
+    
         // Fill in magicHand with 7 random cards
         for (int i=0; i<magicHand.length; i++)
         {
             Card c = new Card();
-            //c.setValue(insert call to random number generator here)
-            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            c.setValue((int) (Math.random() * 13));
+            c.setSuit(Card.SUITS[(int)(Math.random()*3)]);
             magicHand[i] = c;
         }
         
