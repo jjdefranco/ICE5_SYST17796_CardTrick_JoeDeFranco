@@ -6,7 +6,8 @@ package com.mycompany.cardtrick;
 
 /**
  *
- * @author joede
+ * @author shettypu
+ * 991700689
  */
 import java.util.Random;
 import java.util.Scanner;
@@ -41,6 +42,18 @@ public class CardTrick {
         userCard.setSuit(userSuit);
 
         // Search magicHand to see if they picked one of the cards from that hand
+        boolean found = false;
+        for (Card card : magicHand) {
+            if (card.getValue() == userCard.getValue() && card.getSuit().equals(userCard.getSuit())) {
+                found = true;
+                break;
+            }
+        }
         // Report if the card was found or not.
+        if (found) {
+            System.out.println("Congratulations! Your card was found in the magic hand.");
+        } else {
+            System.out.println("Sorry, your card was not found in the magic hand.");
+        }
     }
 }
