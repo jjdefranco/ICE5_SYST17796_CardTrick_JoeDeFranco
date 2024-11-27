@@ -3,6 +3,7 @@
  */
 
 package com.mycompany.cardtrick;
+import java.util.Scanner;
 
 
 /**
@@ -25,8 +26,23 @@ public class CardTrick {
         }
         
         // TODO:
+        Scanner input = new Scanner(System.in);
+         System.out.println("Guess Value");
+         Integer cValue = Integer.valueOf(input.nextLine());
+         System.out.println("Guess Suit");
+         String cSuit = input.nextLine();
+        
         //insert code to ask the user for Card value and suit, create their card.
         // Search magicHand to see if they picked one of the cards from that hand
         // Report if the card was found or not.
+        
+        for (int i=0; i<magicHand.length; i++)
+        {
+            if (magicHand[i].getValue() == cValue && magicHand[i].getSuit() == cSuit)
+            {
+                System.out.println("The card was found, it was card " + i);
+            }
+            
+        }
     }
 }
