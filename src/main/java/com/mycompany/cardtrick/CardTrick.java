@@ -8,7 +8,8 @@ import java.util.Scanner;
 
 /**
  *
- * @author Prahalad Prasanna
+ * @author joede
+ * @modifier Prahalad Prasanna , Student ID : 991781145
  */
 public class CardTrick {
 
