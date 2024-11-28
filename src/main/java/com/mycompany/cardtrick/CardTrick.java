@@ -9,6 +9,7 @@ import java.util.Scanner;
 /**
  *
  * @author joede
+ * @Modifier - Awais Shahid - 991731808
  */
 public class CardTrick {
 
