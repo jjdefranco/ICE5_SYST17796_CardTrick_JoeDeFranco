@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author joede
+ * @author Bassam Husam - husamb
  */
 public class CardTrick {
 
@@ -33,7 +33,7 @@ public class CardTrick {
         //insert code to ask the user for Card value and suit, create their card.
         System.out.print("enter the value of your card (1-13): ");
         int userValue = scanner.nextInt();
-
+ 
         System.out.print("enter the suit of your card (hearts, diamonds, spades, clubs): ");
         String userSuit = scanner.next();
 
